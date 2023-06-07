@@ -6,16 +6,11 @@ import time as t
 import os
 
 from parametros import cts_mp, cts_tg
-
 from funcoes.entrada_troc_gas import entrada_tg
 from funcoes.derivada_troc_gas import derivada_tg
 from funcoes.saida_troc_gas import saida_tg
 from funcoes.plot_troc_gas import plot_tg
-
 from decorators.timefunc import timefunc
-
-
-
 
 RR = cts_tg["RR"]
 dt = cts_tg["dt"]

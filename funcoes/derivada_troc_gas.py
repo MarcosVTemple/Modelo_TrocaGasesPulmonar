@@ -8,7 +8,7 @@ def derivada_tg(x, u, cts_tg):
     Vt, Vcap, n_t_O2_fis, n_t_CO2_fis, c_t_O2_fis, c_t_CO2_fis, Q_O2_Alb, Q_O2, Q_O2, Q_CO2 = get_constants(cts_tg)
 
 
-    nT = n_A_O2 + n_A_CO2 + n_A_N  # numero de mmols no ALVEOLO
+    nT = n_A_O2 + n_A_CO2 + n_A_N
     nT_cap = ((-n_cap_O2 - n_cap_CO2) * (nT / n_A_N)) / (1 - (nT / n_A_N))
 
     if cts_tg["modo_ventilacao"] == "apneia":
@@ -70,8 +70,9 @@ def get_constants(cts_tg):
     Q_O2 = (Q_O2_Alb * (Patm / (R * T))) * 1000  # mmol/s
     Q_CO2 = Q_O2 * 0.85  # mmol/s
 
-    D_O2 = D_O2_Alb * ((Patm) / (R * T)) * 1000
-    D_CO2 = D_CO2_Alb * ((Patm) / (R * T)) * 1000
+    # D_O2 = D_O2_Alb * ((Patm) / (R * T)) * 1000
+    # D_CO2 = D_CO2_Alb * ((Patm) / (R * T)) * 1000
+    
     # calculado com base nos valores iniciais de n para os 3 compartimentos e derivada zero
     D_O2 = 0.00010646783207639284
     D_CO2 = 4.3922884135450315e-05
