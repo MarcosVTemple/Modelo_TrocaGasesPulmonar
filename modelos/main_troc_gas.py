@@ -83,9 +83,10 @@ class TrocaGases:
             )
 
     def inicializa_var_estado(self):
+        prop = 1
         nt_inicial = ((cts_tg["Patm"]*cts_tg["VA_t"])/(cts_tg["R"]*cts_tg["Temp"]))*1000
-        self.x_tg.iloc[0, 0] = nt_inicial*cts_tg["f_O2"]  # 6.7145
-        self.x_tg.iloc[0, 1] = nt_inicial*cts_tg["f_CO2"]  # 2.5817
+        self.x_tg.iloc[0, 0] = nt_inicial*cts_tg["f_O2"]
+        self.x_tg.iloc[0, 1] = nt_inicial*cts_tg["f_CO2"]
         self.x_tg.iloc[0, 2] = nt_inicial*cts_tg["f_N2_H2O"]
 
         self.x_tg.iloc[0, 3] = 0.5388

@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 def plot_tg(t, x, y, u):
     plt.figure(1)
-    plt.title("Troca de Gases - nº de Mols dos Gases no Compartimento Alveolar")
-    plt.xlabel("Tempo (s)")
+    # plt.title("Troca de Gases - nº de Mols dos Gases no Compartimento Alveolar")
+    plt.xlabel("Tempo [s]")
     plt.ylabel("nº de Mols [mmol]")
     plt.plot(t, np.array(x["n_A_O2"]), color="r", label="n_A_O2")
     plt.plot(t, np.array(x["n_A_CO2"]), color="b", label="n_A_CO2")
@@ -21,8 +21,8 @@ def plot_tg(t, x, y, u):
     # plt.show()
 
     plt.figure(2)
-    plt.title("Troca de Gases - nº de Mols dos Gases no Compartimento Capilar")
-    plt.xlabel("Tempo (s)")
+    # plt.title("Troca de Gases - nº de Mols dos Gases no Compartimento Capilar")
+    plt.xlabel("Tempo [s]")
     plt.ylabel("nº de Mols [mmol]")
     plt.plot(t, np.array(x["n_cap_O2"]), color="r", label="n_cap_O2")
     plt.plot(t, np.array(x["n_cap_CO2"]), color="k", label="n_cap_CO2")
@@ -35,8 +35,8 @@ def plot_tg(t, x, y, u):
         )
 
     plt.figure(3)
-    plt.title("Troca de Gases - nº de Mols dos Gases no Compartimento Tecidual")
-    plt.xlabel("Tempo (s)")
+    # plt.title("Troca de Gases - nº de Mols dos Gases no Compartimento Tecidual")
+    plt.xlabel("Tempo [s]")
     plt.ylabel("nº de Mols [mmol]")
     plt.plot(t, np.array(x["n_t_O2"]), color="r", label="n_t_O2")
     plt.plot(t, np.array(x["n_t_CO2"]), color="k", label="n_t_CO2")
@@ -49,8 +49,8 @@ def plot_tg(t, x, y, u):
         )
 
     plt.figure(4)
-    plt.title("Troca de Gases - Vazão Alveolar")
-    plt.xlabel("Tempo (s)")
+    # plt.title("Troca de Gases - Vazão Alveolar")
+    plt.xlabel("Tempo [s]")
     plt.ylabel("Fluxo [L/s]")
     plt.plot(t, np.array(u["VA_dot"]), color="r", label="VA_dot")
     plt.legend(loc="upper left")
@@ -62,8 +62,8 @@ def plot_tg(t, x, y, u):
         )
 
     plt.figure(5)
-    plt.title("Troca de Gases - Pressões Parciais dos Gases no Compartimento Alveolar")
-    plt.xlabel("Tempo (s)")
+    # plt.title("Troca de Gases - Pressões Parciais dos Gases no Compartimento Alveolar")
+    plt.xlabel("Tempo [s]")
     plt.ylabel("P parcial [mmHg]")
     plt.plot(t, np.array(y["P_A_O2"]), color="r", label="P_A_O2")
     plt.plot(t, np.array(y["P_A_CO2"]), color="b", label="P_A_CO2")
@@ -77,8 +77,8 @@ def plot_tg(t, x, y, u):
         )
 
     plt.figure(6)
-    plt.title("Troca de Gases - Pressões Parciais dos Gases no Compartimento Capilar")
-    plt.xlabel("Tempo (s)")
+    # plt.title("Troca de Gases - Pressões Parciais dos Gases no Compartimento Capilar")
+    plt.xlabel("Tempo [s]")
     plt.ylabel("P parcial [mmHg]")
     plt.plot(t, np.array(y["P_cap_O2"]), color="r", label="P_cap_O2")
     plt.plot(t, np.array(y["P_cap_CO2"]), color="b", label="P_cap_CO2")
@@ -90,4 +90,16 @@ def plot_tg(t, x, y, u):
             f"{os.getenv('modo_atividade','repouso')}"
         )
     else:
-        plt.show()
+        # plt.show()
+        a = 0
+        
+    fig, (ax1, ax2) = plt.subplots(2, sharex=True)
+    fig.suptitle('')
+    ax1.plot(t, np.array(y["P_cap_O2"]), color="r", label="P_cap_O2")
+    ax1.plot(t, np.array(y["P_cap_CO2"]), color="b", label="P_cap_CO2")
+    ax2.plot(t, np.array(y["P_cap_O2"]), color="r", label="P_cap_O2")
+    ax2.plot(t, np.array(y["P_cap_CO2"]), color="b", label="P_cap_CO2")
+    fig.savefig(
+        f"results/tg/figures/6_pparcial_capilar_"
+            f"teste_"
+    )

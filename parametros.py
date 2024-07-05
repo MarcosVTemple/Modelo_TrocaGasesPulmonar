@@ -41,12 +41,12 @@ cts_tg = {
     "Patm": 100000,                 # 100000 [Pa] - 1 [atm] - 760 [mmHg]
     "Patm_pulmao": 100000,                 # 100000 [Pa] - (760 - 47 p vapor agua) [mmHg]
     "Pfis": 1.5,                    # Amplitude de Pw
-    # "f_O2":  0.2094,                 # fração do gas na atm
-    # "f_CO2": 0.0038,                # fração do gas na atm
-    # "f_N2_H2O": 0.7868,                  # fração do gas na atm
-    "f_O2": 0.1368,  # fração do gas na atm
-    "f_CO2": 0.0526,  # fração do gas na atm
-    "f_N2_H2O": 0.8105,  # fração do gas na atm
+    "f_O2":  0.2094,                 # fração do gas na atm
+    "f_CO2": 0.0038,                # fração do gas na atm
+    "f_N2_H2O": 0.7868,                  # fração do gas na atm
+    # "f_O2": 0.1368,  # fração do gas na atm
+    # "f_CO2": 0.0526,  # fração do gas na atm
+    # "f_N2_H2O": 0.8105,  # fração do gas na atm
     "D_O2_Alb": 32.253e-10,         # 26 [ml/min.mmHg] - 0.00043 [L/s.mmHg] - 32.253e-10 [m³/s.Pa]
     # "D_O2": (D_O2_Alb) * ((Patm) / (R * T)) * 1000  # convertido em mmols
     "D_CO2_Alb": 22.502e-09,        # 180 [ml/min.mmHg] - 0.003 [L/s.mmHg] - 22.502e-09 [m³/s.Pa]
@@ -66,7 +66,7 @@ cts_tg = {
     "modo_ventilacao": "normal",
     # "modo_ventilacao": "apneia",
     # Repouso
-        "Q_O2_Alb": ((0.3 / 1000) / 60),        # proporção do consumo do gás O2 [m3/s] 200-300 ml/min
+        "Q_O2_Alb": ((0.2 / 1000) / 60),        # proporção do consumo do gás O2 [m3/s] 200-300 ml/min
         # "Q_O2": (Q_O2_Alb * (Patm / (R * T))) * 1000  # proporção do consumo do gás O2 [mmol/s]
         "Q_b": (5.6 / 60) / 1000,  # 5.6 L/min - 5.6/1000 m3
         "RR": 12,                                   # breaths/min
